@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?bp0ytv');
+  src:  url('../fonts/icomoon.eot?bp0ytv#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.woff?bp0ytv') format('woff'),
+    url('../fonts/icomoon.svg?bp0ytv#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"] {
+  display: inline-flex;
+}
+
+[class^="icon-"]::before, [class*=" icon-"]::before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-telegram:before {
+  content: "\e900";
+}
+.icon-text-link:before {
+  content: "\e901";
+  color: #3350b5;
+}
+.icon-whatsapp:before {
+  content: "\e902";
+}
+.icon-accordion:before {
+  content: "\e903";
+}
+.icon-chevron:before {
+  content: "\e904";
+}
+.icon-phone:before {
+  content: "\e905";
+  color: #fff;
+}
