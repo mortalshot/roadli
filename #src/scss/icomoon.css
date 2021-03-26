@@ -11,6 +11,7 @@
 
 [class^="icon-"] {
   display: inline-flex;
+  align-items: center;
 }
 
 [class^="icon-"]::before, [class*=" icon-"]::before {
@@ -33,7 +34,6 @@
 }
 .icon-text-link:before {
   content: "\e901";
-  color: #3350b5;
 }
 .icon-whatsapp:before {
   content: "\e902";
@@ -46,5 +46,4 @@
 }
 .icon-phone:before {
   content: "\e905";
-  color: #fff;
 }

@@ -1,0 +1,11 @@
+{
+    "liveSassCompile.settings.formats": [
+
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": null
+        },
+    ],
+    "scssFormatter.printWidth": 100000000000,
+}

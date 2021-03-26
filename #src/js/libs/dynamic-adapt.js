@@ -1,170 +1,161 @@
 // Dynamic Adapt v.1
-// HTML data-da="where(uniq class name),position(digi),when(breakpoint)"
-// e.x. data-da="item,2,992"
+// HTML data-da="where(uniq class name),when(breakpoint),position(digi)"
+// e.x. data-da=".item,992,2"
 // Andrikanych Yevhen 2020
 // https://www.youtube.com/c/freelancerlifestyle
 
 "use strict";
 
-(function () {
-	let originalPositions = [];
-	let daElements = document.querySelectorAll('[data-da]');
-	let daElementsArray = [];
-	let daMatchMedia = [];
-	//Заполняем массивы
-	if (daElements.length > 0) {
-		let number = 0;
-		for (let index = 0; index < daElements.length; index++) {
-			const daElement = daElements[index];
-			const daMove = daElement.getAttribute('data-da');
-			if (daMove != '') {
-				const daArray = daMove.split(',');
-				const daPlace = daArray[1] ? daArray[1].trim() : 'last';
-				const daBreakpoint = daArray[2] ? daArray[2].trim() : '767';
-				const daType = daArray[3] === 'min' ? daArray[3].trim() : 'max';
-				const daDestination = document.querySelector('.' + daArray[0].trim())
-				if (daArray.length > 0 && daDestination) {
-					daElement.setAttribute('data-da-index', number);
-					//Заполняем массив первоначальных позиций
-					originalPositions[number] = {
-						"parent": daElement.parentNode,
-						"index": indexInParent(daElement)
-					};
-					//Заполняем массив элементов 
-					daElementsArray[number] = {
-						"element": daElement,
-						"destination": document.querySelector('.' + daArray[0].trim()),
-						"place": daPlace,
-						"breakpoint": daBreakpoint,
-						"type": daType
-					}
-					number++;
-				}
-			}
-		}
-		dynamicAdaptSort(daElementsArray);
+function DynamicAdapt(type) {
+	this.type = type;
+}
 
-		//Создаем события в точке брейкпоинта
-		for (let index = 0; index < daElementsArray.length; index++) {
-			const el = daElementsArray[index];
-			const daBreakpoint = el.breakpoint;
-			const daType = el.type;
+DynamicAdapt.prototype.init = function () {
+	const _this = this;
+	// массив объектов
+	this.оbjects = [];
+	this.daClassname = "_dynamic_adapt_";
+	// массив DOM-элементов
+	this.nodes = document.querySelectorAll("[data-da]");
 
-			daMatchMedia.push(window.matchMedia("(" + daType + "-width: " + daBreakpoint + "px)"));
-			daMatchMedia[index].addListener(dynamicAdapt);
-		}
-	}
-	//Основная функция
-	function dynamicAdapt(e) {
-		for (let index = 0; index < daElementsArray.length; index++) {
-			const el = daElementsArray[index];
-			const daElement = el.element;
-			const daDestination = el.destination;
-			const daPlace = el.place;
-			const daBreakpoint = el.breakpoint;
-			const daClassname = "_dynamic_adapt_" + daBreakpoint;
-
-			if (daMatchMedia[index].matches) {
-				//Перебрасываем элементы
-				if (!daElement.classList.contains(daClassname)) {
-					let actualIndex = indexOfElements(daDestination)[daPlace];
-					if (daPlace === 'first') {
-						actualIndex = indexOfElements(daDestination)[0];
-					} else if (daPlace === 'last') {
-						actualIndex = indexOfElements(daDestination)[indexOfElements(daDestination).length];
-					}
-					daDestination.insertBefore(daElement, daDestination.children[actualIndex]);
-					daElement.classList.add(daClassname);
-				}
-			} else {
-				//Возвращаем на место
-				if (daElement.classList.contains(daClassname)) {
-					dynamicAdaptBack(daElement);
-					daElement.classList.remove(daClassname);
-				}
-			}
-		}
-		customAdapt();
+	// наполнение оbjects объктами
+	for (let i = 0; i < this.nodes.length; i++) {
+		const node = this.nodes[i];
+		const data = node.dataset.da.trim();
+		const dataArray = data.split(",");
+		const оbject = {};
+		оbject.element = node;
+		оbject.parent = node.parentNode;
+		оbject.destination = document.querySelector(dataArray[0].trim());
+		оbject.breakpoint = dataArray[1] ? dataArray[1].trim() : "767";
+		оbject.place = dataArray[2] ? dataArray[2].trim() : "last";
+		оbject.index = this.indexInParent(оbject.parent, оbject.element);
+		this.оbjects.push(оbject);
 	}
 
-	//Вызов основной функции
-	dynamicAdapt();
+	this.arraySort(this.оbjects);
 
-	//Функция возврата на место
-	function dynamicAdaptBack(el) {
-		const daIndex = el.getAttribute('data-da-index');
-		const originalPlace = originalPositions[daIndex];
-		const parentPlace = originalPlace['parent'];
-		const indexPlace = originalPlace['index'];
-		const actualIndex = indexOfElements(parentPlace, true)[indexPlace];
-		parentPlace.insertBefore(el, parentPlace.children[actualIndex]);
-	}
-	//Функция получения индекса внутри родителя
-	function indexInParent(el) {
-		var children = Array.prototype.slice.call(el.parentNode.children);
-		return children.indexOf(el);
-	}
-	//Функция получения массива индексов элементов внутри родителя 
-	function indexOfElements(parent, back) {
-		const children = parent.children;
-		const childrenArray = [];
-		for (let i = 0; i < children.length; i++) {
-			const childrenElement = children[i];
-			if (back) {
-				childrenArray.push(i);
-			} else {
-				//Исключая перенесенный элемент
-				if (childrenElement.getAttribute('data-da') == null) {
-					childrenArray.push(i);
-				}
-			}
-		}
-		return childrenArray;
-	}
-	//Сортировка объекта
-	function dynamicAdaptSort(arr) {
-		arr.sort(function (a, b) {
-			if (a.breakpoint > b.breakpoint) { return -1 } else { return 1 }
+	// массив уникальных медиа-запросов
+	this.mediaQueries = Array.prototype.map.call(this.оbjects, function (item) {
+		return '(' + this.type + "-width: " + item.breakpoint + "px)," + item.breakpoint;
+	}, this);
+	this.mediaQueries = Array.prototype.filter.call(this.mediaQueries, function (item, index, self) {
+		return Array.prototype.indexOf.call(self, item) === index;
+	});
+
+	// навешивание слушателя на медиа-запрос
+	// и вызов обработчика при первом запуске
+	for (let i = 0; i < this.mediaQueries.length; i++) {
+		const media = this.mediaQueries[i];
+		const mediaSplit = String.prototype.split.call(media, ',');
+		const matchMedia = window.matchMedia(mediaSplit[0]);
+		const mediaBreakpoint = mediaSplit[1];
+
+		// массив объектов с подходящим брейкпоинтом
+		const оbjectsFilter = Array.prototype.filter.call(this.оbjects, function (item) {
+			return item.breakpoint === mediaBreakpoint;
 		});
-		arr.sort(function (a, b) {
-			if (a.place > b.place) { return 1 } else { return -1 }
+		matchMedia.addListener(function () {
+			_this.mediaHandler(matchMedia, оbjectsFilter);
 		});
+		this.mediaHandler(matchMedia, оbjectsFilter);
 	}
-	//Дополнительные сценарии адаптации
-	function customAdapt() {
-		//const viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-	}
-}());
+};
 
-/*
-let block = document.querySelector('.click');
-block.addEventListener("click", function (e) {
-	alert('Все ок ;)');
-});
-*/
-
-/*
-//Объявляем переменные
-const parent_original = document.querySelector('.content__blocks_city');
-const parent = document.querySelector('.content__column_river');
-const item = document.querySelector('.content__block_item');
-//Слушаем изменение размера экрана
-window.addEventListener('resize', move);
-//Функция
-function move(){
-	const viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-	if (viewport_width <= 992) {
-		if (!item.classList.contains('done')) {
-			parent.insertBefore(item, parent.children[2]);
-			item.classList.add('done');
+DynamicAdapt.prototype.mediaHandler = function (matchMedia, оbjects) {
+	if (matchMedia.matches) {
+		for (let i = 0; i < оbjects.length; i++) {
+			const оbject = оbjects[i];
+			оbject.index = this.indexInParent(оbject.parent, оbject.element);
+			this.moveTo(оbject.place, оbject.element, оbject.destination);
 		}
 	} else {
-		if (item.classList.contains('done')) {
-			parent_original.insertBefore(item, parent_original.children[2]);
-			item.classList.remove('done');
+		for (let i = 0; i < оbjects.length; i++) {
+			const оbject = оbjects[i];
+			if (оbject.element.classList.contains(this.daClassname)) {
+				this.moveBack(оbject.parent, оbject.element, оbject.index);
+			}
 		}
 	}
+};
+
+// Функция перемещения
+DynamicAdapt.prototype.moveTo = function (place, element, destination) {
+	element.classList.add(this.daClassname);
+	if (place === 'last' || place >= destination.children.length) {
+		destination.insertAdjacentElement('beforeend', element);
+		return;
+	}
+	if (place === 'first') {
+		destination.insertAdjacentElement('afterbegin', element);
+		return;
+	}
+	destination.children[place].insertAdjacentElement('beforebegin', element);
 }
-//Вызываем функцию
-move();
-*/
+
+// Функция возврата
+DynamicAdapt.prototype.moveBack = function (parent, element, index) {
+	element.classList.remove(this.daClassname);
+	if (parent.children[index] !== undefined) {
+		parent.children[index].insertAdjacentElement('beforebegin', element);
+	} else {
+		parent.insertAdjacentElement('beforeend', element);
+	}
+}
+
+// Функция получения индекса внутри родителя
+DynamicAdapt.prototype.indexInParent = function (parent, element) {
+	const array = Array.prototype.slice.call(parent.children);
+	return Array.prototype.indexOf.call(array, element);
+};
+
+// Функция сортировки массива по breakpoint и place 
+// по возрастанию для this.type = min
+// по убыванию для this.type = max
+DynamicAdapt.prototype.arraySort = function (arr) {
+	if (this.type === "min") {
+		Array.prototype.sort.call(arr, function (a, b) {
+			if (a.breakpoint === b.breakpoint) {
+				if (a.place === b.place) {
+					return 0;
+				}
+
+				if (a.place === "first" || b.place === "last") {
+					return -1;
+				}
+
+				if (a.place === "last" || b.place === "first") {
+					return 1;
+				}
+
+				return a.place - b.place;
+			}
+
+			return a.breakpoint - b.breakpoint;
+		});
+	} else {
+		Array.prototype.sort.call(arr, function (a, b) {
+			if (a.breakpoint === b.breakpoint) {
+				if (a.place === b.place) {
+					return 0;
+				}
+
+				if (a.place === "first" || b.place === "last") {
+					return 1;
+				}
+
+				if (a.place === "last" || b.place === "first") {
+					return -1;
+				}
+
+				return b.place - a.place;
+			}
+
+			return b.breakpoint - a.breakpoint;
+		});
+		return;
+	}
+};
+
+const da = new DynamicAdapt("max");
+da.init();

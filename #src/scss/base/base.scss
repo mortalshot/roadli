@@ -25,6 +25,7 @@ body {
 
     &__main {
         padding: $size-header-height 0px 0px 0px;
+        transition: 0.3s ease all 0s;
 
         @media screen and (max-width: 767px) {
             padding: $size-header-height-mobile 0px 0px 0px;
@@ -36,10 +37,20 @@ body {
     }
 }
 
+.container-fluid {
+    max-width: #{$size-container-fluid + px};
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @media screen and (min-width: 992px) {
+        padding: 0 30px;
+    }
+}
+
 .container {
     max-width: #{$size-container + px};
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 20px;
 
     @media screen and (min-width: 992px) {
         padding: 0 30px;

@@ -1,30 +1,27 @@
 // === Sizes ===
-$size-container: 1131;
-$layoutDesktop: 1366;
+$size-container-fluid: 1226;
+$size-container: 1226;
+$layoutDesktop: 1280;
 $layoutMobile: 320;
-$size-header-height: 91px;
-$size-header-height-mobile: 55px;
+$size-header-height: 80px;
+$size-header-height-mobile: 50px;
 
 // === Font ===
-$fontMain: "Lato";
-$fontSecond: "CenturyGothic";
-$fontThird: "Roboto";
-$fontWeight: 400;
-$fontSize: 20;
-$fontSizeMobile: 15;
-$lineHeight: 32;
-$fontColor: #333;
+$fontMain: "Gilroy";
+$fontSecond: "Roboto";
+$fontWeight: 500;
+$fontSize: 16;
+$fontSizeMobile: 16;
+$lineHeight: 24;
+$fontColor: #0f1721;
 // === Color ===
 
 $Black: #000;
+$Black2: #0f1721;
 $White: #fff;
-$Gray: #333;
-$Gray2: #f9f9f9;
-$Gray3: #bdbdbd;
-$DGray: #4f4f4f;
-$DGray2: #828282;
-$DBlue: #154b62;
-$DBlue2: #203842;
-$Cyan: #3196a9;
-$Cyan2: #dbe8ec;
-$Cyan3: #183741;
+$Grey: #f6f6f7;
+$Grey2: #c6c8c9;
+$DGrey: #88888a;
+$Blue: #3350b5;
+$Blue2: #4A62BA;
+$LBlue: #f2f5ff;

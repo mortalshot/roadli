@@ -1,3 +1,21 @@
 .title {
-    
+    &-h1 {
+        font-weight: 700;
+        @include adaptiv-font(48, 58, 26, 1);
+    }
+
+    &-h2 {
+        font-weight: 700;
+        @include adaptiv-font(36, 43, 24, 1);
+    }
+
+    &-h3 {
+        font-weight: 600;
+        @include adaptiv-font(28, 33, 24, 1);
+    }
+
+    &-h4 {
+        font-weight: 700;
+        @include adaptiv-font(20, 24, 18, 1);
+    }
 }

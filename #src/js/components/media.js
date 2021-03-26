@@ -1,4 +1,4 @@
-mediaQueryMdMin = window.matchMedia('(min-width: 768px)');
+mediaQueryMdMin = window.matchMedia('(min-width: 767px)');
 
 // mediaQueryMdMin
 mediaQueryMdMin.addListener(handleTabletChange);

@@ -12,6 +12,7 @@
 
 // === fonts ===
 @import "fonts";
+@import "icomoon";
 
 // === Base ===
 @import "base/index";
@@ -21,3 +22,133 @@
 
 // === Pages ===
 @import "pages/index";
+
+// === MAIN START ===
+.main {
+	&__content {
+	}
+
+	&__container {
+	}
+
+	&__content-wrapper {
+		width: 50%;
+		@include adaptiv-value("padding-top", 66, 50, 1);
+		@include adaptiv-value("padding-bottom", 66, 50, 1);
+		@include adaptiv-value("padding-left", 66, 0, 1);
+
+		@media screen and (max-width: 767px) {
+			position: relative;
+			z-index: 2;
+			padding-left: 0;
+		}
+	}
+
+	&__title-wrapper {
+		@include adaptiv-value("margin-bottom", 48, 24, 1);
+	}
+
+	&__title {
+		@include adaptiv-value("margin-bottom", 24, 16, 1);
+	}
+
+	&__subtitle {
+	}
+
+	&__btn {
+		@include adaptiv-value("margin-bottom", 47, 32, 1);
+	}
+
+	&__image {
+		@media screen and (min-width: $layoutDesktop + "px") {
+			flex: 0 0 calc(50vw - (0.5 - 0.5) * (#{$size-container}px - 40px));
+		}
+	}
+
+	&--frontpage {
+		@media screen and (max-width: 767px) {
+			position: relative;
+		}
+
+		.main {
+			&__image {
+				@media screen and (max-width: 767px) {
+					position: absolute;
+					top: 0;
+					right: 0;
+					pointer-events: none;
+					transform: translate(60%, 0);
+				}
+			}
+
+			&__content-wrapper {
+				@media screen and (max-width: 767px) {
+					width: 100%;
+					@include adaptiv-value("max-width", 487, 240, 0);
+				}
+			}
+
+			&__title-wrapper {
+				@media screen and (max-width: 767px) {
+					margin-bottom: 80px;
+				}
+			}
+		}
+	}
+}
+
+.phone {
+	display: flex;
+	align-items: center;
+
+	&__icon {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 38px;
+		height: 38px;
+		flex: 0 0 38px;
+		font-size: 12px;
+		color: $Blue;
+		border: 1px solid $Black2;
+		border-radius: 12px;
+		margin-right: 16px;
+		transition: 0.3s ease border-color 0s;
+
+		@media screen and (min-width: 992px) {
+			&:hover {
+				border-color: $Blue2;
+			}
+		}
+	}
+
+	&__content {
+	}
+
+	&__label {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 21px;
+	}
+
+	&__link {
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 30px;
+		color: $Black2;
+		text-decoration: underline from-font;
+		transition: 0.3s ease color 0s;
+
+		@media screen and (min-width: 992px) {
+			&:hover {
+				text-decoration: underline from-font;
+				color: rgba($color: $Black2, $alpha: 0.6);
+			}
+		}
+	}
+}
+// === MAIN END ===
+
+// === MAIN START ===
+
+// === MAIN END ===
