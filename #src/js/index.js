@@ -4,4 +4,5 @@
 @@include('components/slider.js')
 @@include('components/tabs.js')
 @@include('components/animation.js')
+@@include('components/accordion.js')
 

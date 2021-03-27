@@ -1,53 +1,60 @@
 .accordion {
-    // .accordion__title
+    &__item {
+        border-bottom: 1px solid $Grey4;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+
     &__title {
-        padding: 20px;
+        font-weight: 600;
+        padding: 24px 0;
         position: relative;
         cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: 0.3s ease opacity 0s;
 
-        @media screen and (max-width: 450px) {
-            padding: 20px 30px 20px 0;
+        @media screen and (min-width: 992px) {
+            &:hover {
+                opacity: 0.6;
+            }
         }
 
-        &::before,
         &::after {
             content: "";
-            width: 9px;
-            height: 1px;
-            background-color: #fff;
-            position: absolute;
-            top: 50%;
-            transform: translate(0, -50%);
-            transition: 0.3s ease all 0s;
+            display: inline-flex;
+            flex: 0 0 24px;
+            width: 24px;
+            height: 24px;
+            background: url(../img/icons/accordion.svg) no-repeat center/contain;
+            transition: 0.3s ease transform 0s;
         }
 
-        &::before {
-            transform: translate(0, -50%) rotate(-45deg);
-            right: 0;
-        }
-
-        &::after {
-            transform: translate(0, -50%) rotate(45deg);
-            right: 6px;
+        span {
+            padding-right: 10px;
         }
 
         &.active {
-            &::before {
-                transform: translate(0, -50%) rotate(45deg);
-            }
             &::after {
-                transform: translate(0, -50%) rotate(-45deg);
+                transform: rotate(-180deg);
             }
         }
     }
 
-    // .accordion__text
     &__text {
-        padding: 0px 20px 20px;
         display: none;
+        padding-bottom: 24px;
+        max-width: 864px;
+        color: $DGrey;
 
-        @media screen and (max-width: 450px) {
-            padding: 0px 30px 20px 0;
+        :first-child {
+            margin-top: 0;
+        }
+        :last-child {
+            margin-bottom: 0;
         }
     }
 }
