@@ -28,7 +28,7 @@
 			height: $size-header-height - 15;
 
 			@media screen and (max-width: 767px) {
-				height: $size-header-height-mobile - 15;
+				height: $size-header-height-mobile - 10;
 			}
 		}
 
@@ -44,7 +44,7 @@
 			padding-top: $size-header-height - 15;
 
 			@media screen and (max-width: 767px) {
-				padding-top: $size-header-height-mobile - 15;
+				padding-top: $size-header-height-mobile - 10;
 			}
 		}
 	}

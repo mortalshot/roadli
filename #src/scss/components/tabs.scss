@@ -1,37 +1,56 @@
-.tabs-triggers {
-	display: flex;
+.tabs {
+	&__triggers {
+		display: flex;
+		justify-content: center;
+	}
 
-	// .tabs-triggers__item
-	&__item {
+	&__triggers-item {
+		font-weight: 600;
+		@include adaptiv-font(16, 24, 14, 1);
+		@include adaptiv-value("padding-left", 40, 30, 1);
+		@include adaptiv-value("padding-right", 40, 30, 1);
+		@include adaptiv-value("padding-top", 10, 8, 1);
+		@include adaptiv-value("padding-bottom", 10, 8, 1);
+		color: $Grey2;
 		position: relative;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		transition: 0.3s ease all 0s;
+		transition: 0.3s ease color 0s;
+
 		&::after {
 			content: "";
 			display: block;
-			background-color: $color-green;
+			width: 100%;
+			height: 3px;
+			background-color: $Grey4;
 			position: absolute;
 			left: 50%;
 			bottom: 0;
-			opacity: 0;
-			transition: 0.3s ease all 0s;
+			transform: translate(-50%, 0);
+			transition: 0.3s ease background-color 0s;
 		}
 
 		&--active {
+			color: $Blue;
+
 			&::after {
-				opacity: 1;
-				width: 100%;
-				left: 0;
+				background-color: $Blue;
 			}
 		}
 	}
-}
 
-.tabs-content {
-	// .tabs-content__item
-	&__item {
+	&__content {
+	}
+
+	&__content-item {
 		display: none;
+		opacity: 0;
+		transition: 0.5s ease opacity 0.15s;
+
+		&--active {
+			display: block;
+			opacity: 1;
+		}
 	}
 }

@@ -29,6 +29,7 @@
 	}
 
 	&__container {
+		width: 100%;
 	}
 
 	&__content-wrapper {
@@ -164,6 +165,7 @@
 	@include adaptiv-value("margin-bottom", 47, 12, 1);
 
 	&__container {
+		max-width: 1173px;
 	}
 
 	&__list {
@@ -242,6 +244,7 @@
 		@include adaptiv-value("padding-bottom", 30, 25, 1);
 		overflow: hidden;
 		position: relative;
+		height: 100%;
 		min-height: 180px;
 
 		@media screen and (max-width: 992px) {
@@ -257,6 +260,7 @@
 	&__item-content {
 		position: relative;
 		z-index: 1;
+		height: 100%;
 
 		@media screen and (max-width: 992px) {
 			flex: 0 0 100%;
@@ -268,6 +272,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		height: 100%;
 
 		@media screen and (max-width: 992px) {
 			width: 70%;
@@ -367,6 +372,300 @@
 			height: 100%;
 			object-fit: contain;
 			object-position: right;
+		}
+	}
+}
+// === MAIN END ===
+
+// === MAIN START ===
+.seo {
+	@include adaptiv-value("margin-top", 142, 56, 1);
+	@include adaptiv-value("margin-bottom", 169, 72, 1);
+
+	&__title {
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 27px;
+		margin: 21px 0;
+
+		@media screen and (min-width: 767px) {
+			max-width: 255px;
+		}
+	}
+
+	&__row {
+		@media screen and (min-width: 767px) {
+			display: flex;
+			@include adaptiv-value("margin-left", -30, -8, 1);
+			@include adaptiv-value("margin-right", -30, -8, 1);
+		}
+
+		& > div {
+			@media screen and (min-width: 767px) {
+				@include adaptiv-value("padding-left", 30, 8, 1);
+				@include adaptiv-value("padding-right", 30, 8, 1);
+			}
+		}
+	}
+
+	&__left {
+		@media screen and (max-width: 767px) {
+			@include adaptiv-value("margin-bottom", 30, 20, 0);
+		}
+
+		*:first-child {
+			margin-top: 0;
+		}
+		*:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__right {
+	}
+
+	&__right-inner {
+		position: relative;
+		padding-left: 70px;
+		@include adaptiv-value("padding-left", 70, 50, 1);
+
+		@media screen and (max-width: 767px) {
+			padding-left: 0;
+
+			& > :first-child {
+				padding-left: 50px;
+			}
+		}
+
+		&::before {
+			content: "";
+			display: block;
+			height: 2px;
+			@include adaptiv-value("width", 50, 35, 1);
+			background: $Grey3;
+			position: absolute;
+			left: 0;
+			top: 22px;
+		}
+
+		*:first-child {
+			margin-top: 0;
+		}
+		*:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	h2 {
+		font-weight: 500;
+		@include adaptiv-font(26, 39, 18, 1);
+		margin: 36px 0;
+
+		@media screen and (max-width: 767px) {
+			font-size: 18px;
+			line-height: 39 / 26 * 100%;
+			margin-bottom: 20px;
+		}
+	}
+
+	h5 {
+	}
+
+	p {
+		margin: 16px 0;
+	}
+
+	ul {
+		padding-left: 20px;
+		margin: 24px 0;
+
+		li {
+			list-style-type: disc;
+			margin: 24px 0;
+		}
+	}
+}
+// === MAIN END ===
+
+// === MAIN START ===
+.offer {
+	&__title {
+		text-align: center;
+		@include adaptiv-value("margin-bottom", 33, 30, 1);
+	}
+
+	.tabs__triggers {
+		@include adaptiv-value("margin-bottom", 90, 30, 1);
+
+		&-item {
+			@media screen and (max-width: 450px) {
+				padding-left: 0;
+				padding-right: 0;
+				flex: 1 1 auto;
+			}
+		}
+	}
+
+	&__row {
+		@media screen and (min-width: 767px) {
+			display: flex;
+			@include adaptiv-value("margin-left", -30, -0, 1);
+			@include adaptiv-value("margin-right", -30, -0, 1);
+
+			& > div {
+				@include adaptiv-value("padding-left", 30, 0, 1);
+				@include adaptiv-value("padding-right", 30, 0, 1);
+			}
+		}
+	}
+
+	&__card {
+		flex: 0 0 45%;
+		@include adaptiv-value("padding-bottom", 80, 20, 1);
+	}
+
+	&__card-inner {
+		border-radius: 24px;
+		@include adaptiv-value("padding-top", 35, 15, 1);
+		@include adaptiv-value("padding-bottom", 45, 25, 1);
+		@include adaptiv-value("padding-left", 40, 20, 1);
+		@include adaptiv-value("padding-right", 40, 20, 1);
+		position: relative;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		box-shadow: 0px -1px 26px -7px rgba(33, 55, 65, 0.61);
+		max-width: 494px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		min-height: 150px;
+
+		@media screen and (max-width: 767px) {
+			margin-bottom: 30px;
+		}
+
+		&::after {
+			content: "";
+			display: block;
+			width: 100%;
+			@include adaptiv-value("height", 50, 20, 1);
+			background: url(../img/offer/offer-card-shadow.png) no-repeat center/contain;
+			position: absolute;
+			@include adaptiv-value("bottom", -30, -10, 1);
+			left: 50%;
+			transform: translate(-50%, 100%);
+		}
+
+		&-black {
+			color: $White;
+		}
+	}
+
+	&__card-top {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		@include adaptiv-value("padding-bottom", 50, 25, 1);
+		flex: 1 1 auto;
+	}
+
+	&__card-logo {
+		@include adaptiv-value("max-width", 100, 50, 1);
+	}
+
+	&__card-phone {
+		font-weight: 600;
+		@include adaptiv-font(16, 24, 14, 1);
+	}
+
+	&__card-bottom {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+	}
+
+	&__card-name {
+		font-weight: 700;
+		@include adaptiv-font(32, 38, 16, 1);
+		padding-right: 10px;
+	}
+
+	&__card-image {
+		@include adaptiv-value("max-width", 200, 100, 1);
+	}
+
+	&__content {
+		flex: 1 1 100%;
+	}
+
+	&__content-inner {
+		max-width: 560px;
+	}
+
+	&__content-options {
+		display: flex;
+		flex-wrap: wrap;
+		@include adaptiv-value("margin-left", -30, -0, 1);
+		@include adaptiv-value("margin-right", -30, -0, 1);
+		margin-bottom: -16px;
+		@include adaptiv-value("padding-bottom", 40, 24, 1);
+	}
+
+	&__content-option {
+		font-size: 14px;
+		line-height: 21px;
+		flex: 0 0 50%;
+		@include adaptiv-value("padding-left", 30, 0, 1);
+		@include adaptiv-value("padding-right", 30, 0, 1);
+		display: inline-flex;
+		align-items: center;
+		margin-bottom: 16px;
+
+		@media screen and (max-width: 450px) {
+			flex: 0 0 100%;
+		}
+
+		&::before {
+			content: "";
+			display: inline-flex;
+			width: 16px;
+			height: 16px;
+			flex: 0 0 16px;
+			border-radius: 50%;
+			margin-right: 10px;
+			background: $White url(../img/icons/offer-accept.svg) no-repeat center;
+			box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+		}
+	}
+
+	&__content-footer {
+		@include adaptiv-value("padding-top", 40, 24, 1);
+		border-top: 1px solid $Grey4;
+		display: flex;
+		align-items: center;
+
+		@media screen and (max-width: 450px) {
+			flex-direction: column-reverse;
+			align-items: baseline;
+		}
+	}
+
+	&__btn {
+		@media screen and (max-width: 400px) {
+			width: 100%;
+		}
+	}
+
+	&__price {
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 36px;
+		@include adaptiv-value("padding-left", 60, 15, 1);
+
+		@media screen and (max-width: 450px) {
+			padding-left: 0;
+			margin: 0 0 16px;
 		}
 	}
 }

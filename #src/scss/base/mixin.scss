@@ -28,10 +28,10 @@
 
         @media (max-width: #{$size-container + px}) {
             font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - #{$layoutMobile + px}) / (#{$layoutDesktop - $layoutMobile})));
-            line-height: calc(#{$lineHeight} / #{$pcSize});
+            line-height: $lineHeight / $pcSize * 100%;
         }
     } @else {
         font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - #{$layoutMobile + px}) / (#{$layoutDesktop - $layoutMobile})));
-        line-height: calc(#{$lineHeight} / #{$pcSize});
+        line-height: $lineHeight / $pcSize * 100%;
     }
 }
