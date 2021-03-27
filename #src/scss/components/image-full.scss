@@ -17,8 +17,11 @@
 	}
 
 	&__body {
-		width: 40%;
 		padding: 66px 15px 66px 0;
+
+		@media screen and (min-width: 767px) {
+			width: 40%;
+		}
 	}
 
 	&__image {
@@ -38,7 +41,7 @@
 			}
 		}
 		@media screen and (min-width: $layoutDesktop + "px") {
-			flex: 0 0 calc(50vw - (0.4 - 0.5) * (#{$size-container}px - 40px));
+			flex: 0 0 calc(50vw - (0.4 - 0.5) * (#{$size-container}px - 40px)); 
 		}
 	}
 }

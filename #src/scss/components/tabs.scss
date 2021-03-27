@@ -16,7 +16,13 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		transition: 0.3s ease color 0s;
+		transition: 0.3s ease all 0s;
+
+		@media screen and (min-width: 992px) {
+			&:hover {
+				opacity: 0.6;
+			}
+		}
 
 		&::after {
 			content: "";
@@ -46,7 +52,7 @@
 	&__content-item {
 		display: none;
 		opacity: 0;
-		transition: 0.5s ease opacity 0.15s;
+		transition: 0.3s ease all 0s;
 
 		&--active {
 			display: block;
