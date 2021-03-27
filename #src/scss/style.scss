@@ -70,6 +70,12 @@
 		@media screen and (min-width: $layoutDesktop + "px") {
 			flex: 0 0 calc(50vw - (0.5 - 0.5) * (#{$size-container}px - 40px));
 		}
+		@media screen and (min-width: 767px) {
+			padding-bottom: 42%;
+		}
+		@media screen and (min-width: 1920px) {
+			padding-bottom: 32%;
+		}
 	}
 
 	&--frontpage {
@@ -193,7 +199,7 @@
 
 // === CLIENTS END ===
 
-// === MAIN START ===
+// === SERVICES START ===
 .services {
 	@include adaptiv-value("margin-top", 93, 50, 1);
 
@@ -375,9 +381,9 @@
 		}
 	}
 }
-// === MAIN END ===
+// === SERVICES END ===
 
-// === MAIN START ===
+// === SEO START ===
 .seo {
 	@include adaptiv-value("margin-top", 142, 56, 1);
 	@include adaptiv-value("margin-bottom", 169, 72, 1);
@@ -485,9 +491,9 @@
 		}
 	}
 }
-// === MAIN END ===
+// === SEO END ===
 
-// === MAIN START ===
+// === OFFER START ===
 .offer {
 	&__title {
 		text-align: center;
@@ -543,6 +549,9 @@
 
 		@media screen and (max-width: 767px) {
 			margin-bottom: 30px;
+		}
+		@media screen and (max-width: 450px) {
+			max-width: 250px;
 		}
 
 		&::after {
@@ -609,7 +618,7 @@
 		@include adaptiv-value("margin-left", -30, -0, 1);
 		@include adaptiv-value("margin-right", -30, -0, 1);
 		margin-bottom: -16px;
-		@include adaptiv-value("padding-bottom", 40, 24, 1);
+		@include adaptiv-value("padding-bottom", 40, 34, 1);
 	}
 
 	&__content-option {
@@ -669,7 +678,100 @@
 		}
 	}
 }
-// === MAIN END ===
+// === OFFER END ===
+
+// === FEATURES START ===
+.features {
+	@include adaptiv-value("margin-top", 82, 90, 1);
+
+	&__title {
+		@include adaptiv-value("margin-bottom", 87, 57, 1);
+
+		@media screen and (min-width: 767px) {
+			max-width: 288px;
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		@include adaptiv-value("margin-top", -32, -20, 1);
+		@include adaptiv-value("margin-bottom", -32, -20, 1);
+		@include adaptiv-value("margin-left", -30, -15, 1);
+		@include adaptiv-value("margin-right", -30, -15, 1);
+
+		@media screen and (min-width: 767px) {
+			max-width: 530px;
+		}
+		@media screen and (max-width: 767px) {
+			margin: -20px -8px;
+		}
+		@media screen and (max-width: 650px) {
+			margin: -20px -15px;
+		}
+	}
+
+	&__card {
+		flex: 0 0 50%;
+		@include adaptiv-value("padding-top", 32, 20, 1);
+		@include adaptiv-value("padding-bottom", 32, 20, 1);
+		@include adaptiv-value("padding-left", 30, 15, 1);
+		@include adaptiv-value("padding-right", 30, 15, 1);
+
+		@media screen and (max-width: 767px) {
+			flex: 0 0 25%;
+			padding: 20px 8px;
+		}
+		@media screen and (max-width: 650px) {
+			flex: 0 0 50%;
+			padding: 20px 15px;
+		}
+	}
+
+	&__card-inner {
+		@media screen and (min-width: 767px) {
+			max-width: 180px;
+		}
+	}
+
+	&__card-icon {
+		margin-bottom: 20px;
+	}
+
+	&__card-title {
+		font-size: 14px;
+		line-height: 21px;
+		color: $DGrey;
+	}
+
+	.image-full__body {
+		padding: 0;
+
+		@media screen and (min-width: 767px) {
+			width: 65%;
+		}
+		@media screen and (max-width: 767px) {
+			width: 100%;
+		}
+	}
+
+	.image-full__image {
+		@media screen and (min-width: 1920px) {
+			padding-bottom: 32%;
+		}
+		@media screen and (min-width: $layoutDesktop + "px") {
+			flex: 0 0 calc(50vw - (0.65 - 0.5) * (#{$size-container}px - 40px));
+		}
+		@media screen and (min-width: 767px) {
+			flex: 0 0 calc(((100vw - 40px) * 0.35) + 20px);
+			padding-bottom: 52%;
+		}
+		@media screen and (max-width: 767px) {
+			display: none;
+		}
+	}
+}
+// === FEATURES END ===
 
 // === MAIN START ===
 
