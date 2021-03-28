@@ -61,3 +61,199 @@
         }
     }
 }
+
+// === ASSISTANCE START ===
+.assistance {
+	.popup {
+		&__content {
+			max-width: 400px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 16px;
+		font-weight: 700;
+		color: $Black2;
+	}
+
+	&__text {
+		margin-bottom: 24px;
+	}
+
+	&__form {
+		.form {
+			&__row--btn {
+				margin-top: 16px;
+			}
+
+			&__button {
+				width: 100%;
+			}
+		}
+	}
+}
+// === ASSISTANCE END ===
+
+// === CARD-ORDER START ===
+.card-order {
+	&__row {
+		@media screen and (min-width: 767px) {
+			display: flex;
+			align-items: flex-start;
+		}
+	}
+
+	&__card {
+		color: $Black2;
+		flex: 0 0 25%;
+		@include adaptiv-value("padding-right", 70, 0, 1);
+
+		@media screen and (min-width: 767px) {
+			.offer {
+				&__card {
+					padding: 0;
+					filter: drop-shadow(0px 14px 24px rgba(0, 0, 0, 0.15));
+				}
+
+				&__card-inner {
+					min-height: 86px;
+					padding: 10px 15px;
+					border-radius: 6px;
+
+					&::after {
+						display: none;
+					}
+				}
+
+				&__card-top {
+					padding-bottom: 15px;
+				}
+
+				&__card-logo {
+					max-width: 28px;
+				}
+
+				&__card-phone {
+					font-size: 5px;
+					line-height: 7px;
+				}
+
+				&__card-name {
+					font-size: 9px;
+					line-height: 11px;
+				}
+
+				&__card-image {
+					max-width: 52px;
+				}
+			}
+		}
+		@media screen and (max-width: 767px) {
+			padding: 0px 0px 25px 0px;
+
+			.offer__card {
+				padding-bottom: 15px;
+			}
+		}
+
+		&-name {
+			font-weight: 600;
+			font-size: 14px;
+			line-height: 21px;
+
+			@media screen and (min-width: 767px) {
+				margin-top: 18px;
+			}
+		}
+	}
+
+	&__content {
+		flex: 1 1 auto;
+	}
+
+	&__form {
+		.form {
+
+			&__submit-row {
+				@media screen and (min-width: 991px) {
+					display: flex;
+					align-items: center;
+				}
+				@media screen and (max-width: 767px) {
+					display: flex;
+					align-items: center;
+				}
+				@media screen and (max-width: 650px) {
+					display: block;
+				}
+			}
+
+			&__button {
+				@media screen and (min-width: 991px) {
+					margin-right: 32px;
+				}
+				@media screen and (min-width: 767px) {
+					padding: 12px 53px;
+				}
+				@media screen and (max-width: 767px) {
+					margin-right: 32px;
+				}
+				@media screen and (max-width: 650px) {
+					margin-right: 0;
+					padding: 12px 53px;
+				}
+				@media screen and (max-width: 450px) {
+					width: 100%;
+				}
+			}
+
+			&__privacy {
+				font-size: 14px;
+				line-height: 21px;
+				flex: 1 1 auto;
+				margin-top: 24px;
+
+				@media screen and (min-width: 991px) {
+					margin-top: 0;
+				}
+				@media screen and (max-width: 767px) {
+					margin-top: 0;
+				}
+				@media screen and (max-width: 650px) {
+					margin-top: 16px;
+				}
+			}
+		}
+
+		.checkbox {
+			display: flex;
+		}
+	}
+
+	&__title {
+		font-weight: 700;
+		color: $Black2;
+		@include adaptiv-value("margin-bottom", 40, 30, 1);
+	}
+
+	&__price {
+		margin-top: 8px;
+		@include adaptiv-value("margin-bottom", 32, 24, 1);
+	}
+
+	&__price-label {
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 21px;
+		color: $DGrey;
+		@include adaptiv-value("margin-bottom", 8, 5, 1);
+	}
+
+	&__price-price {
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 36px;
+		color: $Black2;
+	}
+}
+// === CARD-ORDER END ===
