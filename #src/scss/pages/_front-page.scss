@@ -2,6 +2,11 @@
 .main {
 	&__container {
 		width: 100%;
+
+		@media screen and (min-width: $layoutDesktop + 'px') {
+			display: flex;
+			align-items: center;
+		}
 	}
 
 	&__content-wrapper {
@@ -16,6 +21,13 @@
 			position: relative;
 			z-index: 2;
 			padding-left: 0;
+			padding-right: 0;
+		}
+
+		.main__image {
+			@media screen and (max-width: 767px) {
+				margin-bottom: 24px;
+			}
 		}
 	}
 
@@ -25,11 +37,25 @@
 
 	&__title {
 		@include adaptiv-value("margin-bottom", 24, 16, 1);
+
+		span {
+			display: block;
+			@include adaptiv-font(30, 36, 20, 1);
+		}
 	}
 
 	&__subtitle {
 		@include adaptiv-font(16, 24, 14, 1);
 		color: $DGrey;
+
+		p {
+			margin: 0;
+
+			span {
+				font-weight: 700;
+				color: $Blue2;
+			}
+		}
 	}
 
 	&__btn {
@@ -50,6 +76,54 @@
 		}
 		@media screen and (min-width: 1920px) {
 			padding-bottom: 32%;
+		}
+	}
+
+	.form__item {
+		flex: 1;
+		margin-bottom: 24px;
+
+		&--phone {
+			flex: 0 0 324px;
+			@include adaptiv-value("flex-basis", 324, 312, 1);
+
+			@media screen and (max-width: 400px) {
+				flex: 1 1 100%;
+			}
+		}
+	}
+
+	&__form-item {
+		display: flex;
+		align-items: center;
+		font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+        color: $Black2;
+        height: 48px;
+        border-radius: 10px;
+        background-color: $Grey;
+        padding: 10px 20px;
+        border: 1px solid $Grey5;
+        transition: all 0.5s ease 0s;
+		max-width: 300px;
+
+		.form__label {
+			margin: 0;
+			color: $Grey2;
+		}
+
+		.form__input {
+			background-color: transparent;
+			border-color: transparent !important;
+			padding-left: 18px;
+		}
+	}
+
+	.btn {
+		@media screen and (max-width: 450px) {
+			width: 100%;
+			max-width: 300px;
 		}
 	}
 
@@ -467,8 +541,8 @@
 
 		&-item {
 			@media screen and (max-width: 450px) {
-				padding-left: 0;
-				padding-right: 0;
+				padding-left: 5px;
+				padding-right: 5px;
 				flex: 1 1 auto;
 			}
 		}

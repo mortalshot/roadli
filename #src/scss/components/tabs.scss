@@ -2,6 +2,12 @@
 	&__triggers {
 		display: flex;
 		justify-content: center;
+		overflow-x: auto;
+		scrollbar-width: thin;
+
+		&::-webkit-scrollbar {
+			height: 0px;
+		}
 	}
 
 	&__triggers-item {
@@ -42,6 +48,7 @@
 
 			&::after {
 				background-color: $Blue;
+				border-radius: 10px;
 			}
 		}
 	}

@@ -3,17 +3,34 @@
 })
 
 <main class="site__main">
-	<section class="main main--frontpage image-full">
+	<section class="main image-full">
 		<div class="main__content image-full__content">
 			<div class="main__container container-fluid">
 				<div class="main__content-wrapper image-full__body">
 					<div class="main__title-wrapper">
-						<h1 class="main__title title-h1">Быстрая помощь на дорогах России</h1>
-						<div class="main__subtitle">Профессиональная помощь на дорогах России и за границей. Удобно, выгодно, доступно!</div>
+						<h1 class="main__title title-h1">Эвакуатор <span>в Москве</span></h1>
+						<div class="main__subtitle">
+                            <p>Подача <span>от 10 минут.</span></p>
+                            <p>Стоимость <span>от 900 ₽</span></p>
+                        </div>
 					</div>
 
 					<div class="main__call">
-						<a href="#assistanceRequest" class="main__btn btn popup-link">Заказать техпомощь</a>
+                        <div class="main__form form">
+                            <form action="#" id="mainForm" class="form__body">
+                                <div class="form__row">
+                                    <div class="form__item form__item--phone">
+                                        <div class="main__form-item">
+                                            <label for="mainFormPhone" class="form__label">Телефон</label>
+                                            <input id="mainFormPhone" type="text" name="name" class="form__input form__input--phone" placeholder="+7 (---) --- -- --">
+                                        </div>
+                                    </div>
+                                    <div class="form__item">
+                                        <button type="submit" class="form__button btn">Заказать</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
 						<div class="phone">
 							<a href="tel:+79008273342" class="phone__icon"><i class="icon-phone"></i></a>
 							<div class="phone__content">
@@ -25,321 +42,120 @@
 				</div>
 			</div>
 		</div>
-		<div class="main__image image-full__image">
-			<img src="img/main/main-1.png" alt="">
+		<div class="main__image image-full__image" data-da=".main__content-wrapper, 767, 1">
+            <picture>
+                <source srcset="img/main/main-2.png" media="(min-width: 767px)">
+                <img src="img/main/main-2-1.jpg" alt="">
+            </picture>
 		</div>
 	</section>
 
 	@@include('html-components/clients.html')
 
-	<section class="services">
-		<div class="container-fluid">
-			<h2 class="services__title title-h2">Наши услуги</h2>
-			<div class="services__list">
-				<div class="services__item">
-					<div class="services__item-wrapper">
-						<div class="services__item-content">
-							<div class="services__item-body">
-								<div class="services__item-top">
-									<a href="" class="services__item-title title-h4">Эвакуатор</a>
-									<div class="services__item-text">Подадим эвакуатор в&nbsp;течении 15&nbsp;минут!</div>
-								</div>
-								<div class="services__item-bottom">
-									<a href="" class="services__item-link">
-										<span>Подробнее</span>
-										<i class="icon-text-link"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="services__item-image"><img src="img/services/service-1.png" alt=""></div>
-					</div>
-				</div>
-				<div class="services__item">
-					<div class="services__item-wrapper">
-						<div class="services__item-content">
-							<div class="services__item-body">
-								<div class="services__item-top">
-									<a href="" class="services__item-title title-h4">Запуск двигателя</a>
-									<div class="services__item-text">В случае ДТП решит быстро решит все вопросы</div>
-								</div>
-								<div class="services__item-bottom">
-									<a href="" class="services__item-link">
-										<span>Подробнее</span>
-										<i class="icon-text-link"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="services__item-image"><img src="img/services/service-2.png" alt=""></div>
-					</div>
-				</div>
-				<div class="services__item">
-					<div class="services__item-wrapper">
-						<div class="services__item-content">
-							<div class="services__item-body">
-								<div class="services__item-top">
-									<a href="" class="services__item-title title-h4">Змена колеса</a>
-									<div class="services__item-text">Оперативно устраним поломку авто</div>
-								</div>
-								<div class="services__item-bottom">
-									<a href="" class="services__item-link">
-										<span>Подробнее</span>
-										<i class="icon-text-link"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="services__item-image"><img src="img/services/service-3.png" alt=""></div>
-					</div>
-				</div>
-				<div class="services__item">
-					<div class="services__item-wrapper">
-						<div class="services__item-content">
-							<div class="services__item-body">
-								<div class="services__item-top">
-									<a href="" class="services__item-title title-h4">Выезд автоэлектрика</a>
-									<div class="services__item-text">от 2&nbsp;000 ₽</div>
-								</div>
-								<div class="services__item-bottom">
-									<a href="" class="services__item-link">
-										<span>Заказать</span>
-										<i class="icon-text-link"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="services__item-image"><img src="img/services/service-4.png" alt=""></div>
-					</div>
-				</div>
-				<div class="services__item">
-					<div class="services__item-wrapper">
-						<div class="services__item-content">
-							<div class="services__item-body">
-								<div class="services__item-top">
-									<a href="" class="services__item-title title-h4">Аварийный комиссар</a>
-									<div class="services__item-text">от 1&nbsp;500 ₽</div>
-								</div>
-								<div class="services__item-bottom">
-									<a href="" class="services__item-link">
-										<span>Подробнее</span>
-										<i class="icon-text-link"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="services__item-image"><img src="img/services/service-5.png" alt=""></div>
-					</div>
-				</div>
-				<div class="services__item">
-					<div class="services__item-wrapper">
-						<div class="services__item-content">
-							<div class="services__item-body">
-								<div class="services__item-top">
-									<a href="" class="services__item-title title-h4">Вскрытие автомобиля</a>
-									<div class="services__item-text">от 1&nbsp;500 ₽</div>
-								</div>
-								<div class="services__item-bottom">
-									<a href="" class="services__item-link">
-										<span>Подробнее</span>
-										<i class="icon-text-link"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="services__item-image"><img src="img/services/service-6.png" alt=""></div>
-					</div>
-				</div>
-				<div class="services__item">
-					<div class="services__item-wrapper">
-						<div class="services__item-content">
-							<div class="services__item-body">
-								<div class="services__item-top">
-									<a href="" class="services__item-title title-h4">Подвоз топлива</a>
-									<div class="services__item-text">от 1&nbsp;000 ₽</div>
-								</div>
-								<div class="services__item-bottom">
-									<a href="" class="services__item-link">
-										<span>Подробнее</span>
-										<i class="icon-text-link"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="services__item-image"><img src="img/services/service-7.png" alt=""></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+    <section class="price-list">
+        <div class="container">
+            <h2 class="price-list__title title-h2">Цена эвакуации</h2>
+            <div class="price-list__table">
+                <div class="price-list__list">
+                    <div class="price-list__item">
+                        <div class="price-list__item-inner">
+                            <div class="price-list__label">Мотоцикл</div>
+                            <div class="price-list__value">900 ₽</div>
+                        </div>
+                    </div>
+                    <div class="price-list__item">
+                        <div class="price-list__item-inner">
+                            <div class="price-list__label">Спецтехника</div>
+                            <div class="price-list__value">от 2 500 ₽</div>
+                        </div>
+                    </div>
+                    <div class="price-list__item">
+                        <div class="price-list__item-inner">
+                            <div class="price-list__label">Легковой автомобиль</div>
+                            <div class="price-list__value">от 1 500 ₽</div>
+                        </div>
+                    </div>
+                    <div class="price-list__item">
+                        <div class="price-list__item-inner">
+                            <div class="price-list__label">Грузовой эвакуатор</div>
+                            <div class="price-list__value">от 7 000 ₽</div>
+                        </div>
+                    </div>
+                    <div class="price-list__item">
+                        <div class="price-list__item-inner">
+                            <div class="price-list__label">Внедорожник</div>
+                            <div class="price-list__value">от 1 900 ₽</div>
+                        </div>
+                    </div>
+                    <div class="price-list__item">
+                        <div class="price-list__item-inner">
+                            <div class="price-list__label">Газель/Микроавтобус</div>
+                            <div class="price-list__value">от 2 500 ₽</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 	@@include('html-components/seo.html')
 
-	<section class="offer">
-		<div class="container-fluid">
-			<div class="offer__title title-h2">Карта помощи на&nbsp;дорогах</div>
-			<div id="offerTabs" class="tabs">
-				<div class="tabs__triggers">
-					<a href="#offerTab-1" class="tabs__triggers-item">Silver</a>
-					<a href="#offerTab-2" class="tabs__triggers-item">Gold</a>
-					<a href="#offerTab-3" class="tabs__triggers-item">Platinum</a>
-				</div>
-				<div class="tabs__content">
-					<div id="offerTab-1" class="tabs__content-item">
-						<div class="offer__row">
-							<div class="offer__card">
-								<div class="offer__card-inner" style="background-image: url(img/offer/offer-card-1.jpg);">
-									<div class="offer__card-top">
-										<div class="offer__card-logo"><img src="img/logo.png" alt=""></div>
-										<div class="offer__card-phone">+7 (900) 827 33 42</div>
-									</div>
-									<div class="offer__card-bottom">
-										<div class="offer__card-name">Карта <br> помощи</div>
-										<div class="offer__card-image"><img src="img/offer/offer-card-1-photo.png" alt=""></div>
-									</div>
-								</div>
-							</div>
-							<div class="offer__content">
-								<div class="offer__content-inner">
-									<div class="offer__content-options">
-										<div class="offer__content-option">Консультация механика</div>
-										<div class="offer__content-option">Такси при эвакуации с&nbsp;места ДТП</div>
-										<div class="offer__content-option">Запуск ДВС</div>
-										<div class="offer__content-option">Юридические консультации</div>
-										<div class="offer__content-option">Замена колеса</div>
-										<div class="offer__content-option">Подвоз топлива</div>
-										<div class="offer__content-option">Вскрытие</div>
-										<div class="offer__content-option">Эвакуация автомобиля</div>
-									</div>
-									<div class="offer__content-footer">
-										<a href="quickCardOrder" class="offer__btn btn popup-link">Получить карту</a>
-										<div class="offer__price">3 999 ₽/год</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div id="offerTab-2" class="tabs__content-item">
-						<div class="offer__row">
-							<div class="offer__card">
-								<div class="offer__card-inner offer__card-inner-black" style="background-image: url(img/offer/offer-card-2.jpg);">
-									<div class="offer__card-top">
-										<div class="offer__card-logo"><img src="img/logo.png" alt=""></div>
-										<div class="offer__card-phone">+7 (900) 827 33 42</div>
-									</div>
-									<div class="offer__card-bottom">
-										<div class="offer__card-name">Карта <br> помощи <br> Gold</div>
-										<div class="offer__card-image"><img src="img/offer/offer-card-2-photo.png" alt=""></div>
-									</div>
-								</div>
-							</div>
-							<div class="offer__content">
-								<div class="offer__content-inner">
-									<div class="offer__content-options">
-										<div class="offer__content-option">Консультация механика</div>
-										<div class="offer__content-option">Такси при эвакуации с&nbsp;места ДТП</div>
-										<div class="offer__content-option">Запуск ДВС</div>
-										<div class="offer__content-option">Юридические консультации</div>
-										<div class="offer__content-option">Вскрытие</div>
-										<div class="offer__content-option">Эвакуация автомобиля</div>
-									</div>
-									<div class="offer__content-footer">
-										<a href="#quickCardOrder" class="offer__btn btn popup-link">Получить карту</a>
-										<div class="offer__price">3 999 ₽/год</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div id="offerTab-3" class="tabs__content-item">
-						<div class="offer__row">
-							<div class="offer__card">
-								<div class="offer__card-inner" style="background-image: url(img/offer/offer-card-3.jpg);">
-									<div class="offer__card-top">
-										<div class="offer__card-logo"><img src="img/logo.png" alt=""></div>
-										<div class="offer__card-phone">+7 (900) 827 33 42</div>
-									</div>
-									<div class="offer__card-bottom">
-										<div class="offer__card-name">Карта <br> помощи <br> Platinum</div>
-										<div class="offer__card-image"><img src="img/offer/offer-card-3-photo.png" alt=""></div>
-									</div>
-								</div>
-							</div>
-							<div class="offer__content">
-								<div class="offer__content-inner">
-									<div class="offer__content-options">
-										<div class="offer__content-option">Консультация механика</div>
-										<div class="offer__content-option">Такси при эвакуации с&nbsp;места ДТП</div>
-										<div class="offer__content-option">Запуск ДВС</div>
-										<div class="offer__content-option">Юридические консультации</div>
-										<div class="offer__content-option">Вскрытие</div>
-										<div class="offer__content-option">Эвакуация автомобиля</div>
-										<div class="offer__content-option">Консультация механика</div>
-										<div class="offer__content-option">Такси при эвакуации с&nbsp;места ДТП</div>
-										<div class="offer__content-option">Запуск ДВС</div>
-										<div class="offer__content-option">Юридические консультации</div>
-										<div class="offer__content-option">Вскрытие</div>
-										<div class="offer__content-option">Эвакуация автомобиля</div>
-										<div class="offer__content-option">Консультация механика</div>
-										<div class="offer__content-option">Такси при эвакуации с&nbsp;места ДТП</div>
-										<div class="offer__content-option">Запуск ДВС</div>
-										<div class="offer__content-option">Юридические консультации</div>
-										<div class="offer__content-option">Вскрытие</div>
-										<div class="offer__content-option">Эвакуация автомобиля</div>
-										<div class="offer__content-option">Консультация механика</div>
-										<div class="offer__content-option">Такси при эвакуации с&nbsp;места ДТП</div>
-										<div class="offer__content-option">Запуск ДВС</div>
-										<div class="offer__content-option">Юридические консультации</div>
-										<div class="offer__content-option">Вскрытие</div>
-										<div class="offer__content-option">Эвакуация автомобиля</div>
-									</div>
-									<div class="offer__content-footer">
-										<a href="#quickCardOrder" class="offer__btn btn popup-link">Получить карту</a>
-										<div class="offer__price">3 999 ₽/год</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
 	@@include('html-components/features.html')
-
-	<section class="promo">
-		<div class="container">
-			<div class="promo__content">
-				<h2 class="promo__title">
-					<span>-10%</span>
-					на предварительный <br> заказ
-				</h2>
-			</div>
-			<div class="promo__image"><img src="img/offer/offer-card-3-photo.png" alt="" width="215" height="115"></div>
-		</div>
-	</section>
 
 	@@include('html-components/map.html')
 
-	<section class="application">
-		<div class="container">
-			<div class="application__content">
-				<h2 class="application__title title-h2">Скачайте приложение</h2>
-				<div class="application__text">Небольшой текст описывающий преимущества приложения, зачем его скачивать человеку</div>
-				<div class="application__links">
-					<div class="application__item">
-						<a href="" class="application__link"><img src="img/appstore.svg" alt=""></a>
-					</div>
-					<div class="application__item">
-						<a href="" class="application__link"><img src="img/googlePlay.svg" alt=""></a>
-					</div>
-				</div>
-			</div>
-			<div class="application__image"><img src="img/application.jpg" alt=""></div>
-		</div>
-	</section>
-	
+    <section class="location">
+        <div class="container">
+            <div id="locationTabs" class="tabs">
+                <div class="tabs__triggers">
+                    <a href="#locationTab-1" class="tabs__triggers-item">По округам</a>
+                    <a href="#locationTab-2" class="tabs__triggers-item">Метро</a>
+                    <a href="#locationTab-3" class="tabs__triggers-item">Районы</a>
+                    <a href="#locationTab-4" class="tabs__triggers-item">Шоссе</a>
+                </div>
+                <div class="tabs__content">
+                    <div id="locationTab-1" class="tabs__content-item">
+                        <div class="location__list">
+                            <div class="location__item"><a href="">Центральный</a></div>
+                            <div class="location__item"><a href="">Восточный</a></div>
+                            <div class="location__item"><a href="">Северо-Западный</a></div>
+                            <div class="location__item"><a href="">Северный</a></div>
+                            <div class="location__item"><a href="">Юго-Восточный</a></div>
+                            <div class="location__item"><a href="">Зеленоградский</a></div>
+                            <div class="location__item"><a href="">Северо-восточный</a></div>
+                            <div class="location__item"><a href="">Западный</a></div>
+                            <div class="location__item"><a href="">Троицкий</a></div>
+                        </div>
+                    </div>
+                    <div id="locationTab-2" class="tabs__content-item">
+                        <div class="location__list">
+                            <div class="location__item"><a href="">Центральный</a></div>
+                            <div class="location__item"><a href="">Восточный</a></div>
+                            <div class="location__item"><a href="">Северо-Западный</a></div>
+                            <div class="location__item"><a href="">Западный</a></div>
+                            <div class="location__item"><a href="">Троицкий</a></div>
+                        </div>
+                    </div>
+                    <div id="locationTab-3" class="tabs__content-item">
+                        <div class="location__list">
+                            <div class="location__item"><a href="">Центральный</a></div>
+                            <div class="location__item"><a href="">Восточный</a></div>
+                            <div class="location__item"><a href="">Северо-Западный</a></div>
+                        </div>
+                    </div>
+                    <div id="locationTab-4" class="tabs__content-item">
+                        <div class="location__list">
+                            <div class="location__item"><a href="">Зеленоградский</a></div>
+                            <div class="location__item"><a href="">Северо-восточный</a></div>
+                            <div class="location__item"><a href="">Западный</a></div>
+                            <div class="location__item"><a href="">Троицкий</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 	@@include('html-components/faq.html')
 
 </main>
