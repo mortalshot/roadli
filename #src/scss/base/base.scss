@@ -70,3 +70,30 @@ img {
 p {
     margin: 16px 0;
 }
+
+.col-12,
+.col-sm-6,
+.col-md-6 {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    min-height: 1px;
+}
+
+.col-sm-6 {
+    @media screen and (min-width: 576px) {
+        flex: 0 0 50%;
+        max-width: 100%;
+    }
+}
+
+.col-md-6 {
+    @media screen and (min-width: 768px) {
+        flex: 0 0 50%;
+        max-width: 100%;
+    }
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}

@@ -20,7 +20,7 @@
 
 		@media screen and (min-width: 992px) {
 			&:hover {
-				opacity: 0.6;
+				color: $Blue;
 			}
 		}
 
@@ -44,9 +44,6 @@
 				background-color: $Blue;
 			}
 		}
-	}
-
-	&__content {
 	}
 
 	&__content-item {

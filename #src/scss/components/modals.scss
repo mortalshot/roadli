@@ -7,7 +7,7 @@
     top: 0;
     left: 0;
     opacity: 0;
-    z-index: 6;
+    z-index: 50;
     visibility: hidden;
     overflow-y: auto;
     overflow-x: hidden;
@@ -29,36 +29,35 @@
         align-items: center;
         justify-content: center;
         padding: 30px 10px;
-
-        @media screen and (max-width: 450px) {
-            padding: 30px 0;
-        }
     }
 
     &__content {
-        // background: $card-color;
-        color: #fff;
-        padding: 60px 40px 64px;
+        @include adaptiv-value("padding-top", 50, 30, 1);
+        @include adaptiv-value("padding-bottom", 50, 30, 1);
+        @include adaptiv-value("padding-right", 50, 20, 1);
+        @include adaptiv-value("padding-left", 50, 20, 1);
+        border-radius: 10px;
+        background: $White;
+        box-shadow: 0px 94px 74px -80px rgba(0, 0, 0, 0.1), 0px 4px 84px rgba(0, 0, 0, 0.07);
+        color: $DGrey;
         width: 100%;
         max-width: 950px;
         position: relative;
         opacity: 0;
         transform: translate(0, -100%);
         transition: 0.8s ease all 0s;
-
-        @media screen and (max-width: 767px) {
-            padding: 25px 10px 60px;
-        }
     }
 
     &__close {
         position: absolute;
-        top: 25px;
-        right: 27px;
+        top: 10px;
+        right: 10px;
+        transition: 0.3s ease opacity 0s;
 
-        @media screen and (max-width: 767px) {
-            top: 15px;
-            right: 7px;
+        @media screen and (min-width: 992px) {
+            &:hover {
+                opacity: 0.6;
+            }
         }
     }
 }
