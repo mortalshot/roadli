@@ -1,0 +1,105 @@
+// === ABOUT START ===
+.about {
+	@include adaptiv-value("padding-top", 107, 30, 1);
+	@include adaptiv-value("padding-bottom", 136, 50, 1);
+
+	&__title {
+		@include adaptiv-value("margin-bottom", 80, 30, 1);
+		text-align: center;
+	}
+
+	&__row {
+		display: flex;
+
+		@media screen and (max-width: 767px) {
+			flex-direction: column-reverse;
+		}
+	}
+
+	&__seo {
+		@include adaptiv-value("padding-right", 100, 0, 1);
+		flex: 1 1 auto;
+
+		@media screen and (max-width: 767px) {
+			padding-right: 0;
+		}
+
+		p {
+			@include adaptiv-font(16, 24, 14, 1);
+		}
+	}
+
+	&__subtitle {
+		@include adaptiv-value("margin-bottom", 32, 20, 1);
+	}
+
+	&__contacts {
+		flex: 0 0 43%;
+
+		@media screen and (max-width: 767px) {
+			margin: 0px 0px 30px 0px;
+		}
+	}
+
+	&__contacts-inner {
+		max-width: 500px;
+		@include adaptiv-value("padding-top", 40, 30, 1);
+		@include adaptiv-value("padding-bottom", 40, 30, 1);
+		@include adaptiv-value("padding-left", 50, 20, 1);
+		@include adaptiv-value("padding-right", 50, 20, 1);
+		background: $White;
+		border: 1px solid $Grey5;
+		box-shadow: 0px 94px 74px -80px rgba(0, 0, 0, 0.1), 0px 4px 84px rgba(0, 0, 0, 0.07);
+		border-radius: 20px;
+		position: relative;
+	}
+
+	&__item {
+		font-weight: 600;
+		@include adaptiv-font(16, 24, 14, 1);
+		display: flex;
+		align-items: flex-start;
+		@include adaptiv-value("margin-bottom", 24, 16, 1);
+
+		&:first-child {
+			@include adaptiv-value("padding-right", 70, 80, 1);
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		a {
+			display: flex;
+			align-items: flex-start;
+			color: $Black2;
+			transition: 0.3s ease color 0s;
+
+			@media screen and (min-width: 992px) {
+				&:hover {
+					color: $DGrey;
+				}
+			}
+		}
+
+		img {
+			flex: 0 0 20px;
+			max-width: 20px;
+			margin-right: 8px;
+		}
+	}
+
+	&__image {
+		position: absolute;
+		right: 0;
+		top: 17px;
+
+		img {
+			@include adaptiv-value("max-width", 120, 100, 1);
+
+			@media screen and (max-width: 767px) {
+				@include adaptiv-value("max-width", 120, 80, 0);
+			}
+		}
+	}
+}
+// === ABOUT END ===

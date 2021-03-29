@@ -98,7 +98,7 @@ if (isMobile.any()) {
             });
         }
 
-        const mediaQueryMenu = window.matchMedia('(max-width: 575px)');
+        const mediaQueryMenu = window.matchMedia('(max-width: 767px)');
         if (mediaQueryMenu.matches) {
             $(menuArrows).click(function () {
                 $(this).closest(menuItem).find('.menu__sub-list').slideToggle(300);

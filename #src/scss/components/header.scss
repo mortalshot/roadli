@@ -1,3 +1,106 @@
+.menu {
+	&__list {
+		@media screen and (max-width: 767px) {
+			width: 100%;
+		}
+	}
+
+	&__item {
+		position: relative;
+		display: inline-flex;
+
+		@media screen and (max-width: 767px) {
+			margin: 0px 0px 20px 0px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0;
+			flex-wrap: wrap;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&.active {
+			.menu__arrow {
+				transform: rotate(-180deg);
+				color: $Black2;
+			}
+
+			.menu__sub-list {
+				opacity: 1;
+				visibility: visible;
+				pointer-events: all;
+				transform: translate(0, 0);
+			}
+		}
+	}
+
+	&__link {
+		font-size: 14px;
+		line-height: 21px;
+		transition: 0.3s ease all 0s;
+	}
+
+	&__arrow {
+		display: inline-flex;
+		transition: 0.3s ease transform, color 0s;
+
+		i {
+			font-size: 21px;
+
+			@media screen and (max-width: 767px) {
+				font-size: 30px;
+			}
+		}
+	}
+
+	&__sub-list {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		background-color: $White;
+
+		@media screen and (min-width: 767px) {
+			padding: 12px 8px;
+			min-width: 236px;
+			border-radius: 4px;
+			box-shadow: 0px 9px 44px rgba(0, 0, 0, 0.1);
+			transform: translate(0, 10%);
+			opacity: 0;
+			visibility: hidden;
+			pointer-events: none;
+			transition: 0.3s ease all 0s;
+		}
+		@media screen and (max-width: 767px) {
+			position: relative;
+			flex: 1 1 100%;
+			margin: 20px 0px 0px 0px;
+			display: none;
+		}
+	}
+
+	&__sub-link {
+		font-weight: 600;
+		font-size: 14px;
+		color: $Black2;
+		padding: 8px 16px;
+		white-space: nowrap;
+		width: 100%;
+		display: inline-flex;
+
+		@media screen and (min-width: 992px) {
+			&:hover {
+				background-color: $LBlue;
+			}
+		}
+		@media screen and (max-width: 767px) {
+			justify-content: center;
+		}
+	}
+}
+
 .header {
 	position: fixed;
 	width: 100%;
@@ -177,7 +280,7 @@
 			height: 100%;
 			overflow: auto;
 			background-color: $White;
-			padding: 0 40px 40px;
+			padding: 0 20px 40px;
 			z-index: 3;
 			display: flex;
 			flex-direction: column;
@@ -222,6 +325,10 @@
 	&__item {
 		padding: 10px 0;
 		@include adaptiv-value("margin-right", 30, 8, 1);
+
+		@media screen and (max-width: 767px) {
+			justify-content: center;
+		}
 
 		&:last-child {
 			margin-right: 0;
@@ -278,6 +385,13 @@
 		align-items: center;
 		@include adaptiv-value("margin-right", 71, 0, 1);
 
+		@media screen and (max-width: 767px) {
+			position: absolute;
+			right: 20px;
+			top: 14px;
+			z-index: 5;
+		}
+
 		&::after {
 			content: "";
 			display: block;
@@ -291,109 +405,6 @@
 
 		i {
 			font-size: 21px;
-		}
-	}
-}
-
-.menu {
-	&__list {
-		@media screen and (max-width: 767px) {
-			width: 100%;
-		}
-	}
-
-	&__item {
-		position: relative;
-		display: inline-flex;
-
-		@media screen and (max-width: 767px) {
-			margin: 0px 0px 20px 0px;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			padding: 0;
-			flex-wrap: wrap;
-
-			&:last-child {
-				margin-bottom: 0;
-			}
-		}
-
-		&.active {
-			.menu__arrow {
-				transform: rotate(-180deg);
-				color: $Black2;
-			}
-
-			.menu__sub-list {
-				opacity: 1;
-				visibility: visible;
-				pointer-events: all;
-				transform: translate(0, 0);
-			}
-		}
-	}
-
-	&__link {
-		font-size: 14px;
-		line-height: 21px;
-		transition: 0.3s ease all 0s;
-	}
-
-	&__arrow {
-		display: inline-flex;
-		transition: 0.3s ease transform, color 0s;
-
-		i {
-			font-size: 21px;
-
-			@media screen and (max-width: 767px) {
-				font-size: 30px;
-			}
-		}
-	}
-
-	&__sub-list {
-		position: absolute;
-		top: 100%;
-		left: 0;
-		background-color: $White;
-
-		@media screen and (min-width: 767px) {
-			padding: 12px 8px;
-			min-width: 236px;
-			border-radius: 4px;
-			box-shadow: 0px 9px 44px rgba(0, 0, 0, 0.1);
-			transform: translate(0, 10%);
-			opacity: 0;
-			visibility: hidden;
-			pointer-events: none;
-			transition: 0.3s ease all 0s;
-		}
-		@media screen and (max-width: 767px) {
-			position: relative;
-			flex: 1 1 100%;
-			margin: 20px 0px 0px 0px;
-			display: none;
-		}
-	}
-
-	&__sub-item {
-	}
-
-	&__sub-link {
-		font-weight: 600;
-		font-size: 14px;
-		color: $Black2;
-		padding: 8px 16px;
-		white-space: nowrap;
-		width: 100%;
-		display: flex;
-
-		@media screen and (min-width: 992px) {
-			&:hover {
-				background-color: $LBlue;
-			}
 		}
 	}
 }

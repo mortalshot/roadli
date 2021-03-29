@@ -510,7 +510,7 @@ $(document).ready(function () {
         _loop2(index);
       }
 
-      var mediaQueryMenu = window.matchMedia('(max-width: 575px)');
+      var mediaQueryMenu = window.matchMedia('(max-width: 767px)');
 
       if (mediaQueryMenu.matches) {
         $(menuArrows).click(function () {
