@@ -1,0 +1,173 @@
+@@include('html-components/_header.html', {
+"title": "Карта помощи"
+})
+
+<main class="site__main">
+    <section class="assistance offer">
+		<div class="container-fluid">
+            <div id="offerTabs" class="tabs">
+                <div class="assistance__wrapper">
+                    <h2 class="offer__title title-h2">Карта помощи на&nbsp;дорогах</h2>
+                    <div class="tabs__triggers">
+                        <a href="#offerTab-1" class="tabs__triggers-item">Silver</a>
+                        <a href="#offerTab-2" class="tabs__triggers-item">Gold</a>
+                        <a href="#offerTab-3" class="tabs__triggers-item">Platinum</a>
+                    </div>
+                </div>
+				<div class="tabs__content">
+					<div id="offerTab-1" class="tabs__content-item">
+                        <div class="offer__card">
+                            <div class="offer__card-inner" style="background-image: url(img/offer/offer-card-1.jpg);">
+                                <div class="offer__card-top">
+                                    <div class="offer__card-logo"><img src="img/logo.png" alt=""></div>
+                                    <div class="offer__card-phone">+7 (900) 827 33 42</div>
+                                </div>
+                                <div class="offer__card-bottom">
+                                    <div class="offer__card-name">Карта <br> помощи</div>
+                                    <div class="offer__card-image"><img src="img/offer/offer-card-1-photo.png" alt=""></div>
+                                </div>
+                            </div>
+                            <div class="offer__content-footer">
+                                <a href="quickCardOrder" class="offer__btn btn popup-link">Получить карту</a>
+                                <div class="offer__price">3 999 ₽/год</div>
+                            </div>
+                        </div>
+					</div>
+					<div id="offerTab-2" class="tabs__content-item">
+                        <div class="offer__card">
+                            <div class="offer__card-inner offer__card-inner-black" style="background-image: url(img/offer/offer-card-2.jpg);">
+                                <div class="offer__card-top">
+                                    <div class="offer__card-logo"><img src="img/logo.png" alt=""></div>
+                                    <div class="offer__card-phone">+7 (900) 827 33 42</div>
+                                </div>
+                                <div class="offer__card-bottom">
+                                    <div class="offer__card-name">Карта <br> помощи <br> Gold</div>
+                                    <div class="offer__card-image"><img src="img/offer/offer-card-2-photo.png" alt=""></div>
+                                </div>
+                            </div>
+                            <div class="offer__content-footer">
+                                <a href="quickCardOrder" class="offer__btn btn popup-link">Получить карту</a>
+                                <div class="offer__price">5 200 ₽/год</div>
+                            </div>
+                        </div>
+					</div>
+					<div id="offerTab-3" class="tabs__content-item">
+                        <div class="offer__card">
+                            <div class="offer__card-inner" style="background-image: url(img/offer/offer-card-3.jpg);">
+                                <div class="offer__card-top">
+                                    <div class="offer__card-logo"><img src="img/logo.png" alt=""></div>
+                                    <div class="offer__card-phone">+7 (900) 827 33 42</div>
+                                </div>
+                                <div class="offer__card-bottom">
+                                    <div class="offer__card-name">Карта <br> помощи <br> Platinum</div>
+                                    <div class="offer__card-image"><img src="img/offer/offer-card-3-photo.png" alt=""></div>
+                                </div>
+                            </div>
+                            <div class="offer__content-footer">
+                                <a href="quickCardOrder" class="offer__btn btn popup-link">Получить карту</a>
+                                <div class="offer__price">5999 ₽/год</div>
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <section class="compare">
+        <div class="container">
+            <h2 class="compare__title title-h2">Сравнение карт</h2>
+            <div class="compare__table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Silver</th>
+                            <th>Gold</th>
+                            <th>Platinum</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <td>Стоимость для клиента</td>
+                            <td>3 978 ₽</td>
+                            <td>5 154 ₽</td>
+                            <td>6 084 ₽</td>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>Консультация механика</td>
+                            <td><span class="compare"></span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+	@@include('html-components/seo.html')
+
+	@@include('html-components/features.html')
+
+	@@include('html-components/map.html')
+
+    <section class="location">
+        <div class="container">
+            <div id="locationTabs" class="tabs">
+                <div class="tabs__triggers">
+                    <a href="#locationTab-1" class="tabs__triggers-item">По округам</a>
+                    <a href="#locationTab-2" class="tabs__triggers-item">Метро</a>
+                    <a href="#locationTab-3" class="tabs__triggers-item">Районы</a>
+                    <a href="#locationTab-4" class="tabs__triggers-item">Шоссе</a>
+                </div>
+                <div class="tabs__content">
+                    <div id="locationTab-1" class="tabs__content-item">
+                        <div class="location__list">
+                            <div class="location__item"><a href="">Центральный</a></div>
+                            <div class="location__item"><a href="">Восточный</a></div>
+                            <div class="location__item"><a href="">Северо-Западный</a></div>
+                            <div class="location__item"><a href="">Северный</a></div>
+                            <div class="location__item"><a href="">Юго-Восточный</a></div>
+                            <div class="location__item"><a href="">Зеленоградский</a></div>
+                            <div class="location__item"><a href="">Северо-восточный</a></div>
+                            <div class="location__item"><a href="">Западный</a></div>
+                            <div class="location__item"><a href="">Троицкий</a></div>
+                        </div>
+                    </div>
+                    <div id="locationTab-2" class="tabs__content-item">
+                        <div class="location__list">
+                            <div class="location__item"><a href="">Центральный</a></div>
+                            <div class="location__item"><a href="">Восточный</a></div>
+                            <div class="location__item"><a href="">Северо-Западный</a></div>
+                            <div class="location__item"><a href="">Западный</a></div>
+                            <div class="location__item"><a href="">Троицкий</a></div>
+                        </div>
+                    </div>
+                    <div id="locationTab-3" class="tabs__content-item">
+                        <div class="location__list">
+                            <div class="location__item"><a href="">Центральный</a></div>
+                            <div class="location__item"><a href="">Восточный</a></div>
+                            <div class="location__item"><a href="">Северо-Западный</a></div>
+                        </div>
+                    </div>
+                    <div id="locationTab-4" class="tabs__content-item">
+                        <div class="location__list">
+                            <div class="location__item"><a href="">Зеленоградский</a></div>
+                            <div class="location__item"><a href="">Северо-восточный</a></div>
+                            <div class="location__item"><a href="">Западный</a></div>
+                            <div class="location__item"><a href="">Троицкий</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	@@include('html-components/faq.html')
+
+</main>
+
+@@include('html-components/_footer.html')
