@@ -1,0 +1,47 @@
+// === GEOGRAPHY START ===
+.geography {
+	@include adaptiv-value("padding-top", 100, 50, 1);
+	@include adaptiv-value("margin-bottom", 130, 50, 1);
+	background: url(../img/geography.jpg) no-repeat top center/contain;
+
+	&__title {
+		text-align: center;
+		@include adaptiv-value("margin-bottom", 80, 50, 1);
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -10px -16px;
+	}
+
+	&__item {
+		padding: 0 10px;
+		flex: 0 0 25%;
+		margin-bottom: 16px;
+
+		@media screen and (max-width: 767px) {
+			flex: 0 0 33.333%;
+		}
+		@media screen and (max-width: 450px) {
+			flex: 0 0 50%;
+		}
+
+		a {
+			font-family: $fontSecond;
+			font-size: 14px;
+			line-height: 17px;
+			color: $Black2;
+			text-decoration: underline;
+			transition: 0.3s ease color 0s;
+
+			@media screen and (min-width: 992px) {
+				&:hover {
+					text-decoration: underline;
+					color: $DGrey;
+				}
+			}
+		}
+	}
+}
+// === GEOGRAPHY END ===
