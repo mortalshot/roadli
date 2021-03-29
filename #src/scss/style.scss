@@ -23,139 +23,206 @@
 // === Pages ===
 @import "pages/index";
 
-// === PRICE-LIST START ===
-.price-list {
+// === ASSISTANCE START ===
+.assistance {
+	@include adaptiv-value("padding-top", 50, 30, 1);
+	@include adaptiv-value("padding-bottom", 50, 30, 1);
+
+	.tabs {
+		@media screen and (min-width: 767px) {
+			display: flex;
+			align-items: center;
+		}
+
+		&__triggers {
+			@media screen and (min-width: 767px) {
+				justify-content: flex-start;
+				margin: 0 !important;
+			}
+			@media screen and (max-width: 767px) {
+				margin-bottom: 30px !important;
+			}
+		}
+	}
+
+	.title-h2 {
+		@include adaptiv-value("margin-bottom", 48, 20, 1);
+
+		@media screen and (min-width: 767px) {
+			max-width: 388px;
+			text-align: left;
+		}
+	}
+
+	&__wrapper {
+		flex: 1 1 auto;
+	}
+
+	.offer {
+		&__title {
+		}
+
+		&__card {
+			padding: 0;
+		}
+
+		&__card-inner {
+			margin-bottom: 40px;
+
+			&::after {
+				bottom: 0;
+			}
+		}
+
+		&__card-top {
+		}
+
+		&__card-logo {
+		}
+
+		&__card-phone {
+		}
+
+		&__card-bottom {
+		}
+
+		&__card-name {
+		}
+
+		&__card-image {
+		}
+
+		&__content-footer {
+			border-top: 0;
+
+			@media screen and (max-width: 767px) {
+				justify-content: center;
+				padding-top: 10px !important;
+			}
+			@media screen and (max-width: 450px) {
+				align-items: center;
+			}
+		}
+
+		&__btn {
+			@media screen and (max-width: 450px) {
+				width: 100%;
+			}
+		}
+
+		&__price {
+			@include adaptiv-value("padding-left", 32, 0, 1);
+		}
+
+		&__card-inner-black {
+		}
+	}
+}
+// === ASSISTANCE END ===
+
+// === MAIN START ===
+.compare {
+	overflow: hidden;
+	@include adaptiv-value("margin-top", 100, 50, 1);
+	@include adaptiv-value("margin-bottom", 100, 50, 1);
+	
 	&__title {
+		text-align: center;
 		@include adaptiv-value("margin-bottom", 48, 24, 1);
 	}
 
 	&__table {
-		background: $White;
-		box-shadow: 0px 94px 74px -80px rgba(0, 0, 0, 0.1), 0px 4px 84px rgba(0, 0, 0, 0.07);
-		border-radius: 10px;
-		@include adaptiv-value("padding-top", 35, 10, 1);
-		@include adaptiv-value("padding-bottom", 35, 10, 1);
-		@include adaptiv-value("padding-left", 60, 20, 1);
-		@include adaptiv-value("padding-right", 60, 20, 1);
-	}
+		table {
+			text-align: center;
+			width: 100%;
+			border-collapse: collapse;
+			border-spacing: 0;
+			overflow-x: auto;
+			scrollbar-width: thin;
 
-	&__list {
-		display: flex;
-		flex-wrap: wrap;
-		@include adaptiv-value("margin-left", -30, -8, 1);
-		@include adaptiv-value("margin-right", -30, -8, 1);
-	}
-
-	&__item {
-		display: flex;
-		flex: 0 0 50%;
-		@include adaptiv-value("padding-left", 30, 8, 1);
-		@include adaptiv-value("padding-right", 30, 8, 1);
-
-		&:nth-child(2n) {
-			justify-content: flex-end;
-		}
-		&:last-child {
-			.price-list__item-inner {
-				border-bottom: 0;
+			&::-webkit-scrollbar {
+				height: 0;
 			}
-		}
 
-		@media screen and (min-width: 767px) {
-			&:nth-last-child(-n + 2) {
-				.price-list__item-inner {
-					border-bottom: 0;
+			thead {
+				th {
+					border-bottom: 1px solid $Grey2;
+					padding: 16px 10px;
+					font-weight: 600;
+					@include adaptiv-font(16, 24, 12, 1);
+					color: $Black2;
 				}
 			}
-		}
-		@media screen and (max-width: 767px) {
-			flex: 0 0 100%;
+
+			tbody {
+				td {
+					@include adaptiv-font(14, 21, 12, 1);
+					border-bottom: 1px solid $Grey2;
+				}
+			}
+
+			tfoot {
+				td {
+					font-weight: 600;
+					@include adaptiv-font(14, 21, 12, 1);
+				}
+			}
+
+			tr {
+				td:first-child {
+					text-align: left;
+					padding-left: 0;
+				}
+				td:last-child {
+					padding-right: 0;
+				}
+			}
+
+			td {
+				padding: 20px 10px;
+			}
 		}
 	}
 
-	&__item-inner {
-		font-size: 14px;
-		line-height: 21px;
-		width: 100%;
+	&__mark {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
-		padding: 15.5px 0;
-		border-bottom: 1px dashed $DGrey;
+		justify-content: center;
+		width: 18px;
+		height: 18px;
+		border-radius: 100%;
+		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+		margin: 0 auto;
 
-		@media screen and (min-width: 767px) {
-			max-width: 363px;
+		&::before {
+			content: "";
+			display: block;
 		}
 	}
 
-	&__label {
-	}
+	&__true {
+		background-color: $Green;
 
-	&__value {
-		white-space: nowrap;
-	}
-}
-// === PRICE-LIST END ===
-
-// === LOCATION START ===
-.location {
-	@include adaptiv-value("margin-top", 150, 70, 1);
-	@include adaptiv-value("margin-bottom", 134, 44, 1);
-
-	&__list {
-		display: flex;
-		flex-wrap: wrap;
-	}
-
-	&__item {
-		flex: 0 0 25%;
-		margin-bottom: 16px;
-
-		@media screen and (max-width: 767px) {
-			flex: 0 0 33.333%;
-		}
-		@media screen and (min-width: 575px) {
-			text-align: center;
-		}
-		@media screen and (max-width: 575px) {
-			flex: 0 0 50%;
-		}
-
-		a {
-			font-family: $fontSecond;
-			font-weight: 400;
-			font-size: 14px;
-			line-height: 17px;
-			color: $Black2;
-			text-decoration: underline;
-			transition: 0.3s ease color 0s;
-
-			@media screen and (min-width: 992px) {
-				&:hover {
-					color: $DGrey;
-				}
-			}
+		&::before {
+			flex: 0 0 8px;
+			width: 9px;
+			height: 7px;
+			background: $Green url(../img/icons/compare-true.svg) no-repeat center/contain;
 		}
 	}
 
-	.tabs {
-		&__triggers {
-			@include adaptiv-value("margin-bottom", 50, 30, 1);
+	&__false {
+		background-color: $Red;
 
-			@media screen and (max-width: 575px) {
-				justify-content: flex-start;
-			}
-		}
-
-		&__triggers-item {
-			white-space: nowrap;
-			@include adaptiv-value("padding-left", 21, 10, 1);
-			@include adaptiv-value("padding-right", 21, 10, 1);
+		&::before {
+			flex: 0 0 8px;
+			width: 8px;
+			height: 8px;
+			background: $Red url(../img/icons/compare-false.svg) no-repeat center/contain;
 		}
 	}
 }
-
-// === LOCATION END ===
+// === MAIN END ===
 
 // === MAIN START ===
 
